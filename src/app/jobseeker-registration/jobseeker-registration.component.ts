@@ -49,11 +49,11 @@ export class JobseekerRegistrationComponent implements OnInit {
     return `${year}-${month}-${day}`;
   }
   onSubmit(form:NgForm){
-    
+    this.isFormSummited=true;
     this.jobseekerServices.addJobseeker().subscribe({
       next:res=>{
         console.log(res);
-        this.isFormSummited=true;
+       
       },
       error:err=>{
         console.log(err);
