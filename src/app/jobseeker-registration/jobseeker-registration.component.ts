@@ -1,6 +1,6 @@
 import { CommonModule} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import $ from 'jquery'
 import { JobseekersService } from '../shared/jobseekers.service';
@@ -48,7 +48,7 @@ export class JobseekerRegistrationComponent implements OnInit {
     console.log(`${year}-${month}-${day}`);
     return `${year}-${month}-${day}`;
   }
-  onSubmit(){
+  onSubmit(form:NgForm){
     this.isFormSummited=true;
   }
 }

@@ -2,7 +2,7 @@
     <div class="card-body">
         <h2 class="card-title">JOBSEEKERS REGISTRATION</h2>
 
-        <form>
+        <form #JobseekerForm="ngForm">
             <div class="row">
                 <div class="col-md-6">
                     <label id="SFirstName" for="SFirstName" class="col-form-label">First Name</label>
@@ -15,7 +15,7 @@
               isFormSummited
             ">
                         <span *ngIf="SFirstName.errors?.['required'] ">First Name is Required</span>
-                        <span  *ngIf="SFirstName.errors?.['minlength']">Minimum 3 letter is Required</span>
+                        <span *ngIf="SFirstName.errors?.['minlength']">Minimum 3 letter is Required</span>
                         <br />
                         <span *ngIf="SFirstName.errors?.['maxlength'] ">Maximum 10 characters</span>
                         <span *ngIf="SFirstName.errors?.['pattern'] ">Only Alphabets allowed And First letter should be
@@ -33,7 +33,7 @@
               SMiddleName.invalid && (SMiddleName.touched || SMiddleName.dirty)
             ">
                         <span *ngIf="SMiddleName.errors?.['minlength'] ">Minimum 3 letter is Required</span>
-                        <br/>
+                        <br />
                         <span *ngIf="SMiddleName.errors?.['maxlength'] ">Maximum 10 characters</span>
                         <span *ngIf="SMiddleName.errors?.['pattern'] ">Only Alphabets allowed And First letter should be
                             capital</span>
@@ -46,11 +46,13 @@
                     <input type="text" id="SLastName" #SLastName="ngModel" name="SLastName" class="form-control"
                         [(ngModel)]="Jobseeker.SLastName" minlength="3" maxlength="10"
                         pattern="{{ regex['Nameregex'] }}" required />
-                    <div class="text-danger" *ngIf="SLastName.invalid && (SLastName.touched || SLastName.dirty)||
-                    isFormSummited">
+                    <div class="text-danger" *ngIf="
+              (SLastName.invalid && (SLastName.touched || SLastName.dirty)) ||
+              isFormSummited
+            ">
                         <span *ngIf="SLastName.errors?.['required'] ">Last Name is Required</span>
                         <span *ngIf="SLastName.errors?.['minlength']">Minimum 3 letter is Required</span>
-                        <br/>
+                        <br />
                         <span *ngIf="SLastName.errors?.['maxlength']">Maximum 10 characters</span>
                         <span *ngIf="SLastName.errors?.['pattern']">Only Alphabets allowed And First letter should be
                             capital</span>
@@ -62,10 +64,12 @@
                     <input type="text" id="Email" #Email="ngModel" name="Email" class="form-control"
                         [(ngModel)]="Jobseeker.Email" minlength="3" maxlength="25" pattern="{{ regex['Email'] }}"
                         required />
-                    <div class="text-danger" *ngIf="Email.invalid && Email.touched && Email.dirty || isFormSummited">
+                    <div class="text-danger" *ngIf="
+              (Email.invalid && Email.touched && Email.dirty) || isFormSummited
+            ">
                         <span *ngIf="Email.errors?.['required'] ">Email is Required</span>
                         <span *ngIf="Email.errors?.['minlength'] ">Minimum 3 letter is Required</span>
-                        <br/>
+                        <br />
                         <span *ngIf="Email.errors?.['maxlength'] ">Maximum 25 characters</span>
                         <span class="text-danger" *ngIf="Email.errors?.['pattern'] ">Enter a valid Email</span>
                     </div>
@@ -77,11 +81,13 @@
                         [(ngModel)]="Jobseeker.PhoneNumber" minlength="10" maxlength="10"
                         pattern="{{ regex['PhoneNumber'] }}" required />
                     <div class="text-danger" *ngIf="
-              PhoneNumber.invalid && (PhoneNumber.touched || PhoneNumber.dirty) ||isFormSummited
+              (PhoneNumber.invalid &&
+                (PhoneNumber.touched || PhoneNumber.dirty)) ||
+              isFormSummited
             ">
                         <span *ngIf="PhoneNumber.errors?.['required'] ">Phone Number is Required</span>
                         <span *ngIf="PhoneNumber.errors?.['minlength'] ">Minimum 10 digits is Required</span>
-                        <br/>
+                        <br />
                         <span *ngIf="PhoneNumber.errors?.['maxlength'] ">Maximum 10 digits</span>
                         <span *ngIf="PhoneNumber.errors?.['pattern'] ">Enter a valid PhoneNumber</span>
                     </div>
@@ -94,7 +100,9 @@
                     <input type="date" id="DateOfBirth" #DateOfBirth="ngModel" name="DateOfBirth" class="form-control"
                         [(ngModel)]="Jobseeker.DateOfBirth" [min]="minDate" [max]="maxDate" required />
                     <div class="text-danger" *ngIf="
-              DateOfBirth.invalid && (DateOfBirth.touched || DateOfBirth.dirty) || isFormSummited
+              (DateOfBirth.invalid &&
+                (DateOfBirth.touched || DateOfBirth.dirty)) ||
+              isFormSummited
             ">
                         <span *ngIf="DateOfBirth.errors?.['required'] ">Date Of Birth is Required</span>
                     </div>
@@ -110,7 +118,9 @@
                         </option>
                     </select>
                     <div class="text-danger" *ngIf="
-              WorkStatus.invalid && (WorkStatus.touched || WorkStatus.dirty) || isFormSummited
+              (WorkStatus.invalid &&
+                (WorkStatus.touched || WorkStatus.dirty)) ||
+              isFormSummited
             ">
                         <span class="text-danger" *ngIf="WorkStatus.errors?.['required'] ">Work Status is
                             Required</span>
@@ -119,7 +129,7 @@
             </div>
             <br />
 
-            <button type="button" (click)="onSubmit()" id="jobseekerButton" class="btn btn-info">
+            <button type="button" (click)="onSubmit(JobseekerForm)" id="jobseekerButton" class="btn btn-info">
                 REGISTER
             </button>
         </form>
