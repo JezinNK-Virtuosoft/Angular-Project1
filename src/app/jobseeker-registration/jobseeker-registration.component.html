@@ -1,46 +1,54 @@
-<h2>JOBSEEKERS REGISTRATION</h2>
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">JOBSEEKERS REGISTRATION</h2>
 
-<form >
-    <div class="row">
-        <div class="col-md-6">
-            <label id="SFirstName" for="SFirstName" class="col-form-label">First Name</label>
-            <input type="text" id="SFirstName" name="SFirstName" class="form-control"/>
-        </div>
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <label id="SFirstName" for="SFirstName" class="col-form-label">First Name</label>
+                    <input type="text" id="SFirstName" name="SFirstName" class="form-control" />
+                </div>
+
+                <br />
+                <div class="col-md-6">
+                    <label id="SMiddleName" for="SMiddleName" class="col-form-label">Middle Name</label>
+                    <input type="text" id="SMiddleName" name="SMiddleName" class="form-control" />
+                </div>
+
+                <br />
+                <div class="col-md-6">
+                    <label id="SLastName" for="SLastName" class="col-form-label">Last Name</label>
+                    <input type="text" id="SLastName" name="SLastName" class="form-control" />
+                </div>
+                <br />
+                <div class="col-md-6">
+                    <label id="Email" for="Email" class="col-form-label">Email</label>
+                    <input type="text" id="Email" name="Email" class="form-control" />
+                </div>
+                <br />
+                <div class="col-md-6">
+                    <label id="PhoneNumber" for="PhoneNumber" class="col-form-label">Phone Number</label>
+                    <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" />
+                </div>
+                <br />
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label id="DateOfBirth" for="DateOfBirth" class="col-form-label">Date Of Birth:</label>
+                    <input type="date" id="DateOfBirth" name="DateOfBirth" class="form-control" />
+                </div>
+                <br />
+                <div class="col-md-12">
+                    <label id="WorkStatus" for="WorkStatus" class="col-form-label">WorkStatus</label>
+                    <select class="form-control">
+                        <option value="">Select your Options</option>
+                        <option *ngFor="let status of workStatus" [value]="status">{{status}}</option>
+                    </select>
+                </div>
+            </div>
+
+        </form>
         
-        <br/>
-        <div class="col-md-6">
-            <label id="SMiddleName" for="SMiddleName" class="col-form-label">Middle Name</label>
-            <input type="text" id="SMiddleName" name="SMiddleName" class="form-control"/>
-        </div>
-        
-        <br/>
-        <div class="col-md-6">
-            <label id="SLastName" for="SLastName" class="col-form-label">Last Name</label>
-            <input type="text" id="SLastName" name="SLastName" class="form-control"/>
-        </div>
-        <br/>
-        <div class="col-md-6">
-            <label id="Email" for="Email" class="col-form-label">Email</label>
-            <input type="text" id="Email" name="Email" class="form-control"/>
-        </div>
-        <br/>
-        <div class="col-md-6">
-            <label id="PhoneNumber" for="PhoneNumber" class="col-form-label">Phone Number</label>
-            <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control"/>
-        </div>
-        <br/>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <label id="DateOfBirth" for="DateOfBirth" class="col-form-label">Date Of Birth:</label>
-            <input type="date" id="DateOfBirth" name="DateOfBirth" class="form-control"/>
-        </div>
-        <br/>
-        <div class="col-md-12">
-            <label id="WorkStatus" for="WorkStatus" class="col-form-label">WorkStatus</label>
-            <input type="text" id="WorkStatus" name="WorkStatus" class="form-control"/>
-        </div>
-    </div>
-    
-</form>
-<p>jobseeker-registration works!</p>
+
+</div>

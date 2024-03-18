@@ -3,8 +3,8 @@ import { EmployerRegComponent } from './employer-reg/employer-reg.component';
 import { JobseekerRegistrationComponent } from './jobseeker-registration/jobseeker-registration.component';
 
 export const routes: Routes = [{
-    path:'EmployerReg',
+    path:'employerReg',
     component:EmployerRegComponent
 },{
-    path:'JobseekerReg',component:JobseekerRegistrationComponent
+    path:'jobseekerReg',component:JobseekerRegistrationComponent
 }];
