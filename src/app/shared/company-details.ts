@@ -1,7 +1,7 @@
 export class CompanyDetails {
-    CompanyID:number=0;
-    CompanyName:string="";
-    StartEmployeeRange:number=0;
-    EndEmployeeRange:number=0;
-    CAddress:string="";
+    companyID:number=0;
+    companyName:string="";
+    startEmployeeRange:number=0;
+    endEmployeeRange:number=0;
+    cAddress:string="";
 }

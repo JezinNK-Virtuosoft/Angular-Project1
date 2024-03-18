@@ -1,9 +1,9 @@
 export class Administrator {
-    AdminId:number=0;
-    Employee_ID:string="";
-    AFirstName:string="";
-    AMiddleName:string="";
-    ALastName:string="";
-    Designation:string="";
-    LoginId:number=0;
+    adminId:number=0;
+    employee_ID:string="";
+    aFirstName:string="";
+    aMiddleName:string="";
+    aLastName:string="";
+    designation:string="";
+    loginId:number=0;
 }

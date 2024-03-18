@@ -1,15 +1,15 @@
 export class Jobseekers {
-    SeekersId:number=0;
-    SFirstName:string="";
-    SMiddleName:string="";
-    SLastName:string="";
-    Email:string="";
-    PhoneNumber:number | null=null;
-    DateOfBirth:Date |null=null;
-    WorkStatus:string="";
-    LoginId:number=0;
-    CreatedBy:string="";
-    CreatedDate:Date=new Date();
-    ModifiedBy:string="";
-    ModifiedDate:Date=new Date();
+    seekersId:number=0;
+    sFirstName:string="";
+    sMiddleName:string="";
+    sLastName:string="";
+    email:string="";
+    phoneNumber:number | null=null;
+    dateOfBirth:Date |null=null;
+    workStatus:string="";
+    loginId:number=0;
+    createdBy:string="";
+    createdDate:Date=new Date();
+    modifiedBy:string="";
+    modifiedDate:Date=new Date();
 }

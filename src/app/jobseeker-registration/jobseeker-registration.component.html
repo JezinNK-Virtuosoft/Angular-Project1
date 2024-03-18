@@ -5,124 +5,124 @@
         <form #JobseekerForm="ngForm">
             <div class="row">
                 <div class="col-md-6">
-                    <label id="SFirstName" for="SFirstName" class="col-form-label">First Name</label>
-                    <input type="text" #SFirstName="ngModel" id="SFirstName" name="SFirstName"
-                        [(ngModel)]="Jobseeker.SFirstName" minlength="3" maxlength="10" class="form-control"
+                    <label id="sFirstName" for="sFirstName" class="col-form-label">First Name</label>
+                    <input type="text" #sFirstName="ngModel" id="sFirstName" name="sFirstName"
+                        [(ngModel)]="Jobseeker.sFirstName" minlength="3" maxlength="10" class="form-control"
                         pattern="{{ regex['Nameregex'] }}" required />
                     <div class="text-danger" *ngIf="
-              (SFirstName.invalid &&
-                (SFirstName.touched || SFirstName.dirty)) ||
+              (sFirstName.invalid &&
+                (sFirstName.touched || sFirstName.dirty)) ||
               isFormSummited
             ">
-                        <span *ngIf="SFirstName.errors?.['required'] ">First Name is Required</span>
-                        <span *ngIf="SFirstName.errors?.['minlength']">Minimum 3 letter is Required</span>
+                        <span *ngIf="sFirstName.errors?.['required'] ">First Name is Required</span>
+                        <span *ngIf="sFirstName.errors?.['minlength']">Minimum 3 letter is Required</span>
                         <br />
-                        <span *ngIf="SFirstName.errors?.['maxlength'] ">Maximum 10 characters</span>
-                        <span *ngIf="SFirstName.errors?.['pattern'] ">Only Alphabets allowed And First letter should be
+                        <span *ngIf="sFirstName.errors?.['maxlength'] ">Maximum 10 characters</span>
+                        <span *ngIf="sFirstName.errors?.['pattern'] ">Only Alphabets allowed And First letter should be
                             capital</span>
                     </div>
                 </div>
 
                 <br />
                 <div class="col-md-6">
-                    <label id="SMiddleName" for="SMiddleName" class="col-form-label">Middle Name</label>
-                    <input type="text" #SMiddleName="ngModel" id="SMiddleName" name="SMiddleName"
-                        [(ngModel)]="Jobseeker.SMiddleName" minlength="3" maxlength="10" class="form-control"
+                    <label id="sMiddleName" for="sMiddleName" class="col-form-label">Middle Name</label>
+                    <input type="text" #sMiddleName="ngModel" id="sMiddleName" name="sMiddleName"
+                        [(ngModel)]="Jobseeker.sMiddleName" minlength="3" maxlength="10" class="form-control"
                         pattern="{{ regex['Nameregex'] }}" />
                     <div class="text-danger" *ngIf="
-              SMiddleName.invalid && (SMiddleName.touched || SMiddleName.dirty)
+              sMiddleName.invalid && (sMiddleName.touched || sMiddleName.dirty)
             ">
-                        <span *ngIf="SMiddleName.errors?.['minlength'] ">Minimum 3 letter is Required</span>
+                        <span *ngIf="sMiddleName.errors?.['minlength'] ">Minimum 3 letter is Required</span>
                         <br />
-                        <span *ngIf="SMiddleName.errors?.['maxlength'] ">Maximum 10 characters</span>
-                        <span *ngIf="SMiddleName.errors?.['pattern'] ">Only Alphabets allowed And First letter should be
+                        <span *ngIf="sMiddleName.errors?.['maxlength'] ">Maximum 10 characters</span>
+                        <span *ngIf="sMiddleName.errors?.['pattern'] ">Only Alphabets allowed And First letter should be
                             capital</span>
                     </div>
                 </div>
 
                 <br />
                 <div class="col-md-6">
-                    <label id="SLastName" for="SLastName" class="col-form-label">Last Name</label>
-                    <input type="text" id="SLastName" #SLastName="ngModel" name="SLastName" class="form-control"
-                        [(ngModel)]="Jobseeker.SLastName" minlength="3" maxlength="10"
+                    <label id="sLastName" for="sLastName" class="col-form-label">Last Name</label>
+                    <input type="text" id="sLastName" #sLastName="ngModel" name="sLastName" class="form-control"
+                        [(ngModel)]="Jobseeker.sLastName" minlength="3" maxlength="10"
                         pattern="{{ regex['Nameregex'] }}" required />
                     <div class="text-danger" *ngIf="
-              (SLastName.invalid && (SLastName.touched || SLastName.dirty)) ||
+              (sLastName.invalid && (sLastName.touched || sLastName.dirty)) ||
               isFormSummited
             ">
-                        <span *ngIf="SLastName.errors?.['required'] ">Last Name is Required</span>
-                        <span *ngIf="SLastName.errors?.['minlength']">Minimum 3 letter is Required</span>
+                        <span *ngIf="sLastName.errors?.['required'] ">Last Name is Required</span>
+                        <span *ngIf="sLastName.errors?.['minlength']">Minimum 3 letter is Required</span>
                         <br />
-                        <span *ngIf="SLastName.errors?.['maxlength']">Maximum 10 characters</span>
-                        <span *ngIf="SLastName.errors?.['pattern']">Only Alphabets allowed And First letter should be
+                        <span *ngIf="sLastName.errors?.['maxlength']">Maximum 10 characters</span>
+                        <span *ngIf="sLastName.errors?.['pattern']">Only Alphabets allowed And First letter should be
                             capital</span>
                     </div>
                 </div>
                 <br />
                 <div class="col-md-6">
-                    <label id="Email" for="Email" class="col-form-label">Email</label>
-                    <input type="text" id="Email" #Email="ngModel" name="Email" class="form-control"
-                        [(ngModel)]="Jobseeker.Email" minlength="3" maxlength="25" pattern="{{ regex['Email'] }}"
+                    <label id="email" for="email" class="col-form-label">email</label>
+                    <input type="text" id="email" #email="ngModel" name="email" class="form-control"
+                        [(ngModel)]="Jobseeker.email" minlength="3" maxlength="25" pattern="{{ regex['email'] }}"
                         required />
                     <div class="text-danger" *ngIf="
-              (Email.invalid && Email.touched && Email.dirty) || isFormSummited
+              (email.invalid && email.touched && email.dirty) || isFormSummited
             ">
-                        <span *ngIf="Email.errors?.['required'] ">Email is Required</span>
-                        <span *ngIf="Email.errors?.['minlength'] ">Minimum 3 letter is Required</span>
+                        <span *ngIf="email.errors?.['required'] ">Email is Required</span>
+                        <span *ngIf="email.errors?.['minlength'] ">Minimum 3 letter is Required</span>
                         <br />
-                        <span *ngIf="Email.errors?.['maxlength'] ">Maximum 25 characters</span>
-                        <span class="text-danger" *ngIf="Email.errors?.['pattern'] ">Enter a valid Email</span>
+                        <span *ngIf="email.errors?.['maxlength'] ">Maximum 25 characters</span>
+                        <span class="text-danger" *ngIf="email.errors?.['pattern'] ">Enter a valid Email</span>
                     </div>
                 </div>
                 <br />
                 <div class="col-md-6">
-                    <label id="PhoneNumber" for="PhoneNumber" class="col-form-label">Phone Number</label>
-                    <input type="text" id="PhoneNumber" #PhoneNumber="ngModel" name="PhoneNumber" class="form-control"
-                        [(ngModel)]="Jobseeker.PhoneNumber" minlength="10" maxlength="10"
-                        pattern="{{ regex['PhoneNumber'] }}" required />
+                    <label id="phoneNumber" for="phoneNumber" class="col-form-label">Phone Number</label>
+                    <input type="text" id="phoneNumber" #phoneNumber="ngModel" name="phoneNumber" class="form-control"
+                        [(ngModel)]="Jobseeker.phoneNumber" minlength="10" maxlength="10"
+                        pattern="{{ regex['phoneNumber'] }}" required />
                     <div class="text-danger" *ngIf="
-              (PhoneNumber.invalid &&
-                (PhoneNumber.touched || PhoneNumber.dirty)) ||
+              (phoneNumber.invalid &&
+                (phoneNumber.touched || phoneNumber.dirty)) ||
               isFormSummited
             ">
-                        <span *ngIf="PhoneNumber.errors?.['required'] ">Phone Number is Required</span>
-                        <span *ngIf="PhoneNumber.errors?.['minlength'] ">Minimum 10 digits is Required</span>
+                        <span *ngIf="phoneNumber.errors?.['required'] ">Phone Number is Required</span>
+                        <span *ngIf="phoneNumber.errors?.['minlength'] ">Minimum 10 digits is Required</span>
                         <br />
-                        <span *ngIf="PhoneNumber.errors?.['maxlength'] ">Maximum 10 digits</span>
-                        <span *ngIf="PhoneNumber.errors?.['pattern'] ">Enter a valid PhoneNumber</span>
+                        <span *ngIf="phoneNumber.errors?.['maxlength'] ">Maximum 10 digits</span>
+                        <span *ngIf="phoneNumber.errors?.['pattern'] ">Enter a valid PhoneNumber</span>
                     </div>
                 </div>
                 <br />
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <label id="DateOfBirth" for="DateOfBirth" class="col-form-label">Date Of Birth:</label>
-                    <input type="date" id="DateOfBirth" #DateOfBirth="ngModel" name="DateOfBirth" class="form-control"
-                        [(ngModel)]="Jobseeker.DateOfBirth" [min]="minDate" [max]="maxDate" required />
+                    <label id="dateOfBirth" for="dateOfBirth" class="col-form-label">Date Of Birth:</label>
+                    <input type="date" id="dateOfBirth" #dateOfBirth="ngModel" name="dateOfBirth" class="form-control"
+                        [(ngModel)]="Jobseeker.dateOfBirth" [min]="minDate" [max]="maxDate" required />
                     <div class="text-danger" *ngIf="
-              (DateOfBirth.invalid &&
-                (DateOfBirth.touched || DateOfBirth.dirty)) ||
+              (dateOfBirth.invalid &&
+                (dateOfBirth.touched || dateOfBirth.dirty)) ||
               isFormSummited
             ">
-                        <span *ngIf="DateOfBirth.errors?.['required'] ">Date Of Birth is Required</span>
+                        <span *ngIf="dateOfBirth.errors?.['required'] ">Date Of Birth is Required</span>
                     </div>
                 </div>
                 <br />
                 <div class="col-md-12">
-                    <label id="WorkStatus" for="WorkStatus" class="col-form-label">WorkStatus</label>
-                    <select [(ngModel)]="Jobseeker.WorkStatus" #WorkStatus="ngModel" class="form-control"
-                        name="WorkStatus" required>
+                    <label id="workStatus" for="workStatus" class="col-form-label">workStatus</label>
+                    <select [(ngModel)]="Jobseeker.workStatus" #workStatus="ngModel" class="form-control"
+                        name="workStatus" required>
                         <option value="">Select your Options</option>
-                        <option *ngFor="let status of workStatus" [value]="status">
+                        <option *ngFor="let status of workStatus1" [value]="status">
                             {{ status }}
                         </option>
                     </select>
                     <div class="text-danger" *ngIf="
-              (WorkStatus.invalid &&
-                (WorkStatus.touched || WorkStatus.dirty)) ||
+              (workStatus.invalid &&
+                (workStatus.touched || workStatus.dirty)) ||
               isFormSummited
             ">
-                        <span class="text-danger" *ngIf="WorkStatus.errors?.['required'] ">Work Status is
+                        <span class="text-danger" *ngIf="workStatus.errors?.['required'] ">Work Status is
                             Required</span>
                     </div>
                 </div>

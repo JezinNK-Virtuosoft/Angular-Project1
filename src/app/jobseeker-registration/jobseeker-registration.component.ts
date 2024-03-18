@@ -15,14 +15,14 @@ import { Jobseekers } from '../shared/jobseekers';
 })
 export class JobseekerRegistrationComponent implements OnInit {
   isFormSummited:boolean=false; 
-  workStatus:string[];
+  workStatus1:string[];
    minDate:string='';
    maxDate:string='';
    Jobseeker:Jobseekers;
    regex:{[key:string]:RegExp};
   constructor(private jobseekerServices:JobseekersService)
   {
-    this.workStatus =this.jobseekerServices.workStatus;
+    this.workStatus1 =this.jobseekerServices.workStatus;
     this.regex=jobseekerServices.regex;
     console.log(this.regex);
     console.log(this.regex['Nameregex'])
@@ -38,7 +38,7 @@ export class JobseekerRegistrationComponent implements OnInit {
    this.minDate=this.formatedDate(new Date(currentDate.getFullYear()-55,currentDate.getMonth(),currentDate.getDate()));
     this.maxDate=this.formatedDate(new Date(currentDate.getFullYear()-18,currentDate.getMonth(),currentDate.getDate()));
     console.log(this.minDate,this.maxDate);
-    console.log("Default Date:",this.Jobseeker.DateOfBirth);
+    console.log("Default Date:",this.Jobseeker.dateOfBirth);
   }
   formatedDate(date:Date):string{
     
@@ -49,6 +49,15 @@ export class JobseekerRegistrationComponent implements OnInit {
     return `${year}-${month}-${day}`;
   }
   onSubmit(form:NgForm){
-    this.isFormSummited=true;
+    
+    this.jobseekerServices.addJobseeker().subscribe({
+      next:res=>{
+        console.log(res);
+        this.isFormSummited=true;
+      },
+      error:err=>{
+        console.log(err);
+      }
+    })
   }
 }

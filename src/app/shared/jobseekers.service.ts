@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Jobseekers } from './jobseekers';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +9,9 @@ import { Injectable } from '@angular/core';
 export class JobseekersService {
   public workStatus:string[];
   public regex:{[key:string]:RegExp};
-  constructor() {
+  formData:Jobseekers=new Jobseekers();
+  url:string=environment.apiBaseurl;
+  constructor(private httpClient:HttpClient) {
     this.workStatus =[
       "Experienced",
       "Fresher"]
@@ -19,5 +24,8 @@ export class JobseekersService {
         FirstPhoneDigit:/^[6-9]/,
         Email:/^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
       }
+   }
+   addJobseeker(){
+    return this.httpClient.post(this.url+'Registration',this.formData);
    }
 }
