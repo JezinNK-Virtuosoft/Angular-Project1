@@ -4,8 +4,8 @@ export class Jobseekers {
     SMiddleName:string="";
     SLastName:string="";
     Email:string="";
-    PhoneNumber:number=0;
-    DateOfBirth:Date=new Date();
+    PhoneNumber:number | null=null;
+    DateOfBirth:Date |null=null;
     WorkStatus:string="";
     LoginId:number=0;
     CreatedBy:string="";
