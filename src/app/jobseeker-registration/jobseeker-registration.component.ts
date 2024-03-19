@@ -53,10 +53,10 @@ export class JobseekerRegistrationComponent implements OnInit {
     
     this.isFormSummited=true;
     console.log(form.value());
-    this.jobseekerServices.addJobseeker().subscribe({
+    this.jobseekerServices.addJobseeker(form.value()).subscribe({
       next:res=>{
         console.log(res);
-       
+        form.resetForm();
       },
       error:err=>{
         console.log(err);

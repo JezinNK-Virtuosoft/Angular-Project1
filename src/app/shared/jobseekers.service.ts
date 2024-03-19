@@ -27,13 +27,13 @@ export class JobseekersService {
         FirstChar:'[A-Z]',
         Digits:'\\d',
         Whitespace:'\\s',
-        PhoneNumber:'[6-9]\d{9}',
+        PhoneNumber:'[6-9]\\d{9}',
         FirstPhoneDigit:'[6-9]',
         Email:'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'
       }
    }
-   addJobseeker():Observable<any>{
-    return this.httpClient.post(this.url+'Registration',this.formData).pipe( catchError((error:HttpErrorResponse)=>{
+   addJobseeker(Jobseeker:Jobseekers):Observable<any>{
+    return this.httpClient.post(this.url+'Registration',Jobseeker).pipe( catchError((error:HttpErrorResponse)=>{
       return throwError(error);
     }));
    }
