@@ -52,8 +52,8 @@ export class JobseekerRegistrationComponent implements OnInit {
   onSubmit(form:NgForm){
     
     this.isFormSummited=true;
-    console.log(form.value());
-    this.jobseekerServices.addJobseeker(form.value()).subscribe({
+    console.log(form.value);
+    this.jobseekerServices.addJobseeker(form.value).subscribe({
       next:res=>{
         console.log(res);
         form.resetForm();
