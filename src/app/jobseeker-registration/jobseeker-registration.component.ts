@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import $ from 'jquery'
 import { JobseekersService } from '../shared/jobseekers.service';
 import { Jobseekers } from '../shared/jobseekers';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-jobseeker-registration',
@@ -19,7 +20,7 @@ export class JobseekerRegistrationComponent implements OnInit {
    minDate:string='';
    maxDate:string='';
    Jobseeker:Jobseekers;
-   regex:{[key:string]:RegExp};
+   regex:{[key:string]:string};
   constructor(private jobseekerServices:JobseekersService)
   {
     this.workStatus1 =this.jobseekerServices.workStatus;
@@ -49,7 +50,9 @@ export class JobseekerRegistrationComponent implements OnInit {
     return `${year}-${month}-${day}`;
   }
   onSubmit(form:NgForm){
+    
     this.isFormSummited=true;
+    console.log(form.value());
     this.jobseekerServices.addJobseeker().subscribe({
       next:res=>{
         console.log(res);

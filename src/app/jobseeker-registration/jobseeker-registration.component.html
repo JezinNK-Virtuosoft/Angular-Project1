@@ -13,7 +13,7 @@
               (sFirstName.invalid &&
                 (sFirstName.touched || sFirstName.dirty)) ||
               isFormSummited
-            ">
+            ">          
                         <span *ngIf="sFirstName.errors?.['required'] ">First Name is Required</span>
                         <span *ngIf="sFirstName.errors?.['minlength']">Minimum 3 letter is Required</span>
                         <br />
@@ -30,7 +30,7 @@
                         [(ngModel)]="Jobseeker.sMiddleName" minlength="3" maxlength="10" class="form-control"
                         pattern="{{ regex['Nameregex'] }}" />
                     <div class="text-danger" *ngIf="
-              sMiddleName.invalid && (sMiddleName.touched || sMiddleName.dirty)
+              sMiddleName.invalid && ((sMiddleName.touched || sMiddleName.dirty))
             ">
                         <span *ngIf="sMiddleName.errors?.['minlength'] ">Minimum 3 letter is Required</span>
                         <br />
@@ -60,9 +60,9 @@
                 </div>
                 <br />
                 <div class="col-md-6">
-                    <label id="email" for="email" class="col-form-label">email</label>
+                    <label id="email" for="email" class="col-form-label">Email</label>
                     <input type="text" id="email" #email="ngModel" name="email" class="form-control"
-                        [(ngModel)]="Jobseeker.email" minlength="3" maxlength="25" pattern="{{ regex['email'] }}"
+                        [(ngModel)]="Jobseeker.email" minlength="3" maxlength="25" pattern="{{ regex['Email'] }}"
                         required />
                     <div class="text-danger" *ngIf="
               (email.invalid && email.touched && email.dirty) || isFormSummited
@@ -71,7 +71,7 @@
                         <span *ngIf="email.errors?.['minlength'] ">Minimum 3 letter is Required</span>
                         <br />
                         <span *ngIf="email.errors?.['maxlength'] ">Maximum 25 characters</span>
-                        <span class="text-danger" *ngIf="email.errors?.['pattern'] ">Enter a valid Email</span>
+                        <span *ngIf="email.errors?.['pattern'] ">Enter a valid Email</span>
                     </div>
                 </div>
                 <br />
@@ -79,7 +79,7 @@
                     <label id="phoneNumber" for="phoneNumber" class="col-form-label">Phone Number</label>
                     <input type="text" id="phoneNumber" #phoneNumber="ngModel" name="phoneNumber" class="form-control"
                         [(ngModel)]="Jobseeker.phoneNumber" minlength="10" maxlength="10"
-                        pattern="{{ regex['phoneNumber'] }}" required />
+                        pattern="{{ regex['PhoneNumber'] }}" required />
                     <div class="text-danger" *ngIf="
               (phoneNumber.invalid &&
                 (phoneNumber.touched || phoneNumber.dirty)) ||
